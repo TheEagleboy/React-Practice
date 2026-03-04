@@ -1,2 +1,3 @@
-To start webserver, run in terminal
-npm run dev
+To start webserver, run in terminal 
+
+`npm run dev`
