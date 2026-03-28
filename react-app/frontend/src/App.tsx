@@ -11,6 +11,7 @@ function App() {
     name: "string";
     username: "string";
     email: "string";
+    id: "string";
   };
 
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -20,6 +21,7 @@ function App() {
   };
 
   const [alertVisible, setAlertVisibility] = useState(false);
+  const [seeUser, setSeeUser] = useState(false);
 
   const [user, setUser] = useState<User[]>([]);
 
@@ -63,19 +65,32 @@ function App() {
         heading="Cities"
         onSelectItem={handleSelectItem}
       />
-      <div>
-        {user.map((data) => {
-          return (
-            <>
-              <div key={data.username}>
-                <h1>{data.name}</h1>
-                <h1>{data.username}</h1>
-                <h1>{data.email}</h1>
-              </div>
-            </>
-          );
-        })}
-      </div>
+
+      <h1>
+        <Button
+          name="See Users"
+          color="secondary"
+          onClick={() => setSeeUser(!seeUser)}
+        ></Button>
+      </h1>
+      {seeUser && (
+        <div>
+          {user.map((data) => {
+            return (
+              <>
+                <div
+                  key={data.id}
+                  style={{ border: "1px solid gray", width: "500px" }}
+                >
+                  <h1>{data.name}</h1>
+                  <h1>{data.username}</h1>
+                  <h1>{data.email}</h1>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      )}
     </>
   );
 }
