@@ -1,56 +1,21 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import { Home } from "./pages/home";
-import { Page1 } from "./pages/page1";
-import { Page2 } from "./pages/page2";
-import { Page3 } from "./pages/page3";
-import Layout from "./components/Layout";
+import { useState, useEffect, ReactNode } from "react";
+import Alert from "../components/Alert";
+import ListGroup from "../components/ListGroup";
+import ListUsers from "../components/ListUsers";
 
-//App.tsx is where holds all pages
+import Button from "../components/Button";
+import Counter from "../components/Counter";
+import { CounterContext } from "../context/CounterContext";
+import { CounterProvider } from "../context/CounterContext";
+import { initState } from "../context/CounterContext";
+import NavBar from "../components/NavBar";
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/page1" element={<Page1 />} />
-          <Route path="/page2" element={<Page2 />} />
-          <Route path="/page3" element={<Page3 />} />
-        </Route>
-      </Routes>
-    </Router>
-  );
-}
-
-export default App;
-
-/*
-(
-        <div>
-          {user.map((data) => {
-            return (
-              <>
-                <div
-                  key={data.id}
-                  style={{ border: "1px solid gray", width: "500px" }}
-                >
-                  <h1>{data.name}</h1>
-                  <h1>{data.username}</h1>
-                  <h1>{data.email}</h1>
-                </div>
-              </>
-            );
-          })}
-        </div>
-      )
-*/
-
-/*
-type User = {
+export function Page3() {
+  type User = {
     name: "string";
     username: "string";
     email: "string";
-     id: "string";
+    id: "string";
   };
 
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -115,4 +80,4 @@ type User = {
       {seeUser && <ListUsers user={user} />}
     </>
   );
-  */
+}
