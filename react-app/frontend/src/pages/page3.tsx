@@ -70,13 +70,12 @@ export function Page3() {
         onSelectItem={handleSelectItem}
       />
 
-      <h1>
-        <Button
-          name="See Users"
-          color="secondary"
-          onClick={() => setSeeUser(!seeUser)}
-        ></Button>
-      </h1>
+      <Button
+        name="See Users"
+        color="secondary"
+        onClick={() => setSeeUser(!seeUser)}
+      ></Button>
+
       {seeUser && <ListUsers user={user} />}
     </>
   );

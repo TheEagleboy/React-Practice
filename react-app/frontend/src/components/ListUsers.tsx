@@ -21,9 +21,9 @@ const ListUsers = ({ user }: Props) => {
               key={data.id}
               style={{ border: "1px solid gray", width: "500px" }}
             >
-              <h1>{data.name}</h1>
-              <h1>{data.username}</h1>
-              <h1>{data.email}</h1>
+              <h3>{data.username}</h3>
+              <h3>{data.name}</h3>
+              <p>{data.email}</p>
             </div>
           </>
         );

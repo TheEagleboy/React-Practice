@@ -5,10 +5,17 @@ import { Outlet } from "react-router-dom";
 const Layout = () => {
   return (
     <>
-      <NavBar />
+      <header>
+        <NavBar />
+        <h1>Above is header section</h1>
+      </header>
       <main>
         <Outlet />
       </main>
+
+      <footer>
+        <h1>Footer section</h1>
+      </footer>
     </>
   );
 };

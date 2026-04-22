@@ -16,6 +16,12 @@ const NavBar = () => {
       <Link to={"/page3"}>
         <button>Page 3</button>
       </Link>
+      <Link to={"/movies"}>
+        <button>movies</button>
+      </Link>
+      <Link to={"/favorites"}>
+        <button>Favorites</button>
+      </Link>
     </div>
   );
 };
